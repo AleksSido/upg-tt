@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.css": "/upg-tt/static/css/main.f55ffd0f.css",
-    "main.js": "/upg-tt/static/js/main.a0bdee85.js",
+    "main.css": "/upg-tt/static/css/main.4fb5eb96.css",
+    "main.js": "/upg-tt/static/js/main.0961b87a.js",
     "static/js/869.d05b5356.chunk.js": "/upg-tt/static/js/869.d05b5356.chunk.js",
     "static/js/787.fa268485.chunk.js": "/upg-tt/static/js/787.fa268485.chunk.js",
     "static/media/date-icon.svg": "/upg-tt/static/media/date-icon.2797ead44cecc00fa71f.svg",
     "static/media/place-icon.svg": "/upg-tt/static/media/place-icon.2fb71b0192f2efff2c95.svg",
     "static/media/search-icon.svg": "/upg-tt/static/media/search-icon.3858d9a81eb86e7f19d2.svg",
     "index.html": "/upg-tt/index.html",
-    "main.f55ffd0f.css.map": "/upg-tt/static/css/main.f55ffd0f.css.map",
-    "main.a0bdee85.js.map": "/upg-tt/static/js/main.a0bdee85.js.map",
+    "main.4fb5eb96.css.map": "/upg-tt/static/css/main.4fb5eb96.css.map",
+    "main.0961b87a.js.map": "/upg-tt/static/js/main.0961b87a.js.map",
     "869.d05b5356.chunk.js.map": "/upg-tt/static/js/869.d05b5356.chunk.js.map",
     "787.fa268485.chunk.js.map": "/upg-tt/static/js/787.fa268485.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.f55ffd0f.css",
-    "static/js/main.a0bdee85.js"
+    "static/css/main.4fb5eb96.css",
+    "static/js/main.0961b87a.js"
   ]
 }
