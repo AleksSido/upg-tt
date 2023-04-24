@@ -2,18 +2,18 @@ import { Event } from '../../../app/event-types';
 import Button from '../../../components/button/button';
 import formatEventDate from '../../../utils/format-event-date';
 import getEventVenue from '../../../utils/get-event-venue';
-import { useAppSelector, useAppDispatch } from '../../../app/hooks';
+import { useAppSelector } from '../../../app/hooks';
 import { selectEventId, resetEventId } from './eventPreviewRequestSlice';
 import getSourcesForImg from '../../../utils/handle-img';
+import type { AppDispatch } from '../../../app/store';
+import {STATIC_TEXT} from '../../../app/constants';
 
 interface Props {
   event: Event;
+  dispatch: AppDispatch;
 }
 
-const STATIC_TEXT = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.';
-
-export default function EventPreview({ event }:Props){
-  const dispatch = useAppDispatch();
+export default function SelectedEventPreview({ event, dispatch }:Props){
   const eventId = useAppSelector(selectEventId);
   const isSelected = event.id === eventId;
 

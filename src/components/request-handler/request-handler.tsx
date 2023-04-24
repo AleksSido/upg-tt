@@ -7,6 +7,7 @@ interface Props {
   isEmptyResponse?: boolean;
   emptyResponseMsg?: string;
 }
+
 export default function RequestHandler({ error, isLoading, isEmptyResponse, children, emptyResponseMsg}:Props){
   if (error) {
     alert("Error!")

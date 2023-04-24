@@ -1,4 +1,4 @@
-import {EventVenue, EventVenueAddress} from '../app/event-types';
+import { EventVenue, EventVenueAddress } from '../app/event-types';
 
 function getAddress(eventVenueAddress:EventVenueAddress){
   let address = ''

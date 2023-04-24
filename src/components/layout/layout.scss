@@ -12,18 +12,30 @@
 }
 .header-content {
   @include shared.content-width;
-  padding: 32px 32px 24px;
+  padding: 32px 32px 0;
+
+  @media (max-width: shared.$breakpoint-mobile) {
+    padding: 8px 8px 0;
+  }
 
   &__top {
     margin-bottom: 40px;
     display: flex;
     justify-content: space-between;
     max-width: 100%;
+
+    @media (max-width: shared.$breakpoint-tablet) {
+      display: block;
+    }
   }
 
   &__top-slot {
     max-width: 336px;
     width: 336px;
+
+    @media (max-width: shared.$breakpoint-mobile) {
+      width: 100%;
+    }
   }
 
   &__title {
@@ -31,6 +43,10 @@
     @include shared.h1-size-height;
     color: shared.$main-text-color;
     margin: 0;
+
+    @media (max-width: shared.$breakpoint-tablet) {
+      margin-bottom: 24px;
+    }
   }
 }
 
@@ -41,6 +57,10 @@
 .main-content {
   @include shared.content-width;
   padding: 32px;
+
+  @media (max-width: shared.$breakpoint-mobile) {
+    padding: 8px;
+  }
 }
 
 .footer {

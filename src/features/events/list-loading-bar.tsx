@@ -1,7 +1,7 @@
 import LoadingBar from '../../components/loading-bar/loading-bar';
 import { clientApi } from '../../app/apiSlice';
-import {useAppSelector} from '../../app/hooks';
-import {selectEventGenreId, selectEventKeyword} from './eventListRequestSlice';
+import { useAppSelector } from '../../app/hooks';
+import { selectEventGenreId, selectEventKeyword } from './eventListRequestSlice';
 
 export default function ListLoadingBar(){
   const genreIdList = useAppSelector(selectEventGenreId);

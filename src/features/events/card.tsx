@@ -1,7 +1,7 @@
 import { Suspense, lazy } from 'react';
-import {Event} from '../../app/event-types';
+import { Event } from '../../app/event-types';
 import './events.scss';
-import EventPreview from './preview';
+import EventPreview from './preview/preview';
 import EventCardTriangle from './card-triangle';
 import { useAppDispatch } from '../../app/hooks';
 import { setEventId } from './preview/eventPreviewRequestSlice';

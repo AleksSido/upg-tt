@@ -1,5 +1,5 @@
 import React from 'react';
-import Layout from './sections/layout';
+import Layout from './components/layout/layout';
 import EventList from './features/events/list';
 import GenreFilter from './features/events/genre-filter';
 import ListLoadingBar from './features/events/list-loading-bar';

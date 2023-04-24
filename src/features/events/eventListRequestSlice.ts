@@ -1,6 +1,6 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { RootState } from '../../app/store';
-import {EventGenreId, EventKeyword, EventListRequest} from '../../app/event-types';
+import { EventGenreId, EventKeyword, EventListRequest } from '../../app/event-types';
 
 const initialState: EventListRequest = {
   genreId: [],

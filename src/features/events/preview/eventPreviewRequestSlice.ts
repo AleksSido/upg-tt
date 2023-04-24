@@ -10,7 +10,6 @@ const initialState: EventPreviewRequestState = {
   id: undefined,
 };
 
-
 export const eventPreviewRequestSlice = createSlice({
   name: 'eventPreviewRequest',
   initialState,

@@ -1,4 +1,4 @@
-import {EventImage} from '../app/event-types';
+import { EventImage } from '../app/event-types';
 
 function findAppropriateSizeImg(imgArr:EventImage[], min:number, opt:number, max:number) {
   const optImg = imgArr.find((item) => item.width >= opt && item.width <= max);
@@ -30,7 +30,8 @@ export default function getSourcesForImg(maxWidth:number, images:EventImage[]):I
     const min = (item - possibleDeviation) * maxWidth;
     const opt = item * maxWidth;
     const max = (item + possibleDeviation) * maxWidth;
-    return findAppropriateSizeImg(images, min, opt, max) + ` ${item}x`;
+    const srcSetItem = findAppropriateSizeImg(images, min, opt, max);
+    return srcSetItem ? srcSetItem + ` ${item}x` : '';
   });
   const srcSet = srcSetArr.length ? srcSetArr.join(', ') : '';
   const src = srcSetArr.length ? srcSetArr[0].replace(' 1x', '') : '';

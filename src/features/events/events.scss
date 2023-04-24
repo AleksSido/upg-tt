@@ -6,6 +6,11 @@
   grid-auto-flow: dense;
   grid-template-columns: repeat(auto-fit, 332px);
   position: relative;
+  justify-content: center;
+
+  @media (max-width: shared.$breakpoint-mobile) {
+    grid-template-columns: auto;
+  }
 }
 
 .event-card {
@@ -62,8 +67,20 @@
   grid-template-columns: repeat(2, 1fr);
   margin: 0 -32px;
 
+  @media (max-width: shared.$breakpoint-desktop) {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  @media (max-width: shared.$breakpoint-mobile) {
+    margin: 0;
+  }
+
   &__info {
     padding: 32px;
+
+    @media (max-width: shared.$breakpoint-mobile) {
+      padding: 16px;
+    }
   }
   &__title {
     @include shared.standard-font;
@@ -98,13 +115,16 @@
   }
   &__img-container {
     position: relative;
+
+    @media (max-width: shared.$breakpoint-desktop) {
+      display: none;
+    }
   }
   &__img {
     width: 100%;
     height: 100%;
     display: block;
     object-fit: cover;
-    object-position: right;
   }
   &__img-filter {
     position: absolute;
@@ -120,13 +140,14 @@
 .genre-filter {
   display: flex;
   flex-wrap: wrap;
-  gap: 24px;
 
   &__item {
     @include shared.standard-font;
     @include shared.link-size-height;
     color: shared.$main-text-color;
     cursor: pointer;
+    margin-right: 24px;
+    margin-bottom: 24px;
 
     &:hover {
       color: shared.$link-active-color;

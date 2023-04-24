@@ -1,5 +1,5 @@
 import './loading-bar.scss';
-import {useEffect, useState} from 'react';
+import { useEffect, useState } from 'react';
 
 interface Props {
   isFetching: boolean;

@@ -1,4 +1,4 @@
-import {EventDate} from '../app/event-types';
+import { EventDate } from '../app/event-types';
 import moment from 'moment';
 
 export default function formatEventDate(eventDate:EventDate){

@@ -1,56 +1,10 @@
-import { createApi, fetchBaseQuery, BaseQueryFn } from '@reduxjs/toolkit/query/react';
+import { createApi, BaseQueryFn } from '@reduxjs/toolkit/query/react';
 import axios from 'axios'
 import type { AxiosRequestConfig, AxiosError } from 'axios'
-import {EventGenre, EventListRequest, Events} from './event-types';
+import { EventGenre, EventListRequest, Events } from './event-types';
+import { API_KEY, CLASSIFICATION_ID, COUNTRY_CODE } from './constants';
+import { transformEvent, transformGenre } from './transform-helpers';
 
-const COUNTRY_CODE = 'FI';
-const CLASSIFICATION_ID = 'KZFzniwnSyZfZ7v7nJ';
-const API_KEY = '0JIWxBrWrDwCSXZzhD9HKwPngGfGc9fq';
-const EVENT_CARD_IMAGE_RATIO = '3_2';
-const EVENT_PREVIEW_IMAGE_RATIO = '16_9';
-
-function transformDate(responseEventDate:any){
-  if (responseEventDate) {
-    const { localDate, localTime } = responseEventDate;
-    return { localDate, localTime };
-  } else {
-    return undefined;
-  }
-}
-
-function transformEvent(responseEvent:any) {
-  const { id, name, images, dates, classifications, _embedded } = responseEvent;
-  const cardImages = images.filter((item:any) => item.ratio === EVENT_CARD_IMAGE_RATIO);
-  const previewImages = images.filter((item:any) => item.ratio === EVENT_PREVIEW_IMAGE_RATIO);
-  const { start, end } = dates;
-  const venues = _embedded.venues.map((item:any) => {
-    const { city, country, state, address, name } = item;
-    return { city, country, state, address, name };
-  });
-  const transformedClassifications = classifications.map((item:any) => {
-    const { genre } = item;
-    const { id, name } = genre;
-    return { genre: { id, name} };
-  });
-  return {
-    id,
-    name,
-    images: {
-      card: cardImages,
-      preview: previewImages
-    },
-    dates: {
-      start: transformDate(start),
-      end: transformDate(end)
-    },
-    venues,
-    classifications: transformedClassifications
-  };
-}
-function transformGenre(responseGenre:any){
-  const { id, name } = responseGenre;
-  return { id, name };
-}
 const axiosBaseQuery =
   (
     { baseUrl }: { baseUrl: string } = { baseUrl: '' }
@@ -109,16 +63,16 @@ export const clientApi = createApi({
         return rawResult._embedded ? rawResult._embedded.events.map((item:any) => transformEvent(item)) : [];
       },
     }),
-    getEvent: builder.query<Events, string>({
-      query: (id) => ({
-        url: `/events/${id}?apikey=${API_KEY}`,
-        method: 'get',
-      }),
-      transformResponse: (rawResult: any, meta) => {
-        return rawResult._embedded.events;
-      },
-    }),
+    // getEvent: builder.query<Events, string>({
+    //   query: (id) => ({
+    //     url: `/events/${id}?apikey=${API_KEY}`,
+    //     method: 'get',
+    //   }),
+    //   transformResponse: (rawResult: any) => {
+    //     return rawResult;
+    //   },
+    // }),
   }),
 });
 
-export const { useGetEventsQuery, useGetEventQuery, useGetGenresQuery } = clientApi;
+export const { useGetEventsQuery, useGetGenresQuery } = clientApi;

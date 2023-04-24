@@ -2,9 +2,9 @@ import { useGetEventsQuery } from '../../app/apiSlice';
 import RequestHandler from '../../components/request-handler/request-handler';
 import Card from './card';
 import { useAppSelector } from '../../app/hooks';
-import {selectEventGenreId, selectEventKeyword} from './eventListRequestSlice';
+import { selectEventGenreId, selectEventKeyword } from './eventListRequestSlice';
 import debounce from 'lodash.debounce';
-import {useCallback, useEffect, useState} from 'react';
+import { useEffect, useState, useMemo } from 'react';
 import { EventListRequest } from '../../app/event-types';
 
 export default function EventList(){
@@ -12,9 +12,10 @@ export default function EventList(){
   const keyword = useAppSelector(selectEventKeyword);
   // for debounce events request
   const [eventListRequest, setEventListRequest] = useState<EventListRequest>({ genreId: genreIdList, keyword});
-  const debouncedSetEventListRequest = useCallback(
-    debounce(setEventListRequest, 500)
-    , [setEventListRequest]);
+  const debouncedSetEventListRequest = useMemo(
+    () => debounce(setEventListRequest, 500),
+    []
+  );
 
   useEffect(()=>{
     debouncedSetEventListRequest({ genreId: genreIdList, keyword});
