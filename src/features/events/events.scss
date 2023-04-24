@@ -1,0 +1,143 @@
+@use "src/styles/shared";
+
+.events-list {
+  display: grid;
+  gap: 16px;
+  grid-auto-flow: dense;
+  grid-template-columns: repeat(auto-fit, 332px);
+  position: relative;
+}
+
+.event-card {
+  //width: 332px;
+  width: 100%;
+  height: 221px;
+  cursor: pointer;
+  position: relative;
+
+  &__img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    filter: shared.$card-drop-shadow;
+  }
+
+  &__fallback {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    @include shared.standard-font;
+    @include shared.p-size-height;
+    color: shared.$main-text-color;
+    background-color: shared.$primary-color;
+    margin: 0;
+  }
+
+  &__triangle {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -32px;
+    transform: rotate(45deg);
+    width: 24px;
+    height: 24px;
+    background-color: shared.$primary-color;
+    margin: auto;
+  }
+}
+
+.event-preview {
+  background-color: shared.$primary-color;
+  grid-column: 1 / -1;
+  color: shared.$main-text-color;
+
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  margin: 0 -32px;
+
+  &__info {
+    padding: 32px;
+  }
+  &__title {
+    @include shared.standard-font;
+    @include shared.h2-size-height;
+    color: shared.$main-text-color;
+    margin: 0 0 16px;
+  }
+  &__date {
+    @include shared.standard-font;
+    @include shared.p-size-height;
+    color: shared.$main-text-color;
+    margin: 0 0 8px;
+    min-height: 24px;
+    background: url("./../../assets/img/date-icon.svg") 0 50% / 16px no-repeat;
+    padding-left: 24px;
+  }
+  &__place {
+    @include shared.standard-font;
+    @include shared.p-size-height;
+    color: shared.$main-text-color;
+    margin-bottom: 16px;
+    min-height: 24px;
+    background: url("./../../assets/img/place-icon.svg") 0 50% / 16px no-repeat;
+    padding-left: 24px;
+  }
+  &__text {
+    @include shared.standard-font;
+    @include shared.p-size-height;
+    color: shared.$main-text-color;
+    margin: 0 0 48px;
+    min-height: 120px;
+  }
+  &__img-container {
+    position: relative;
+  }
+  &__img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    object-position: right;
+  }
+  &__img-filter {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: -24px;
+    bottom: 0;
+    z-index: 20;
+    background: linear-gradient(90deg, #252B40 6.73%, rgba(37, 43, 64, 0) 33.05%);
+  }
+}
+
+.genre-filter {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+
+  &__item {
+    @include shared.standard-font;
+    @include shared.link-size-height;
+    color: shared.$main-text-color;
+    cursor: pointer;
+
+    &:hover {
+      color: shared.$link-active-color;
+    }
+
+    &_active {
+      color: shared.$link-active-color;
+    }
+
+    &_no-cursor {
+      cursor: unset;
+    }
+  }
+}

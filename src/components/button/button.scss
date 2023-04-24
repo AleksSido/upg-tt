@@ -1,0 +1,19 @@
+@use "src/styles/shared";
+
+.button {
+  -webkit-appearance: none;
+  background-color: unset;
+  display: block;
+  cursor: pointer;
+  border: 1px solid shared.$main-text-color;
+  height: 40px;
+  padding: 8px 24px;
+  @include shared.standard-font;
+  @include shared.p-size-height;
+  color: shared.$main-text-color;
+
+  &:hover {
+    background-color: shared.$main-text-color;
+    color: shared.$primary-color;
+  }
+}

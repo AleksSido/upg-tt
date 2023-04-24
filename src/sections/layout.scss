@@ -1,0 +1,61 @@
+@use "src/styles/shared";
+
+.body-container {
+  background-color: shared.$def-background-color;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+.header {
+  background-color: shared.$primary-color;
+  position: relative;
+}
+.header-content {
+  @include shared.content-width;
+  padding: 32px 32px 24px;
+
+  &__top {
+    margin-bottom: 40px;
+    display: flex;
+    justify-content: space-between;
+    max-width: 100%;
+  }
+
+  &__top-slot {
+    max-width: 336px;
+    width: 336px;
+  }
+
+  &__title {
+    @include shared.standard-font;
+    @include shared.h1-size-height;
+    color: shared.$main-text-color;
+    margin: 0;
+  }
+}
+
+.header-content__menu {
+
+}
+
+.main-content {
+  @include shared.content-width;
+  padding: 32px;
+}
+
+.footer {
+  background-color: shared.$primary-color;
+  margin-top: auto;
+}
+.footer-content {
+  @include shared.content-width;
+  padding: 16px 0 13px;
+}
+.footer-copyright {
+  @include shared.standard-font;
+  @include shared.p-size-height;
+  color: shared.$main-text-color;
+  margin: 0;
+  text-align: center;
+  opacity: .7;
+}

@@ -1,10 +1,16 @@
 import { configureStore, ThunkAction, Action } from '@reduxjs/toolkit';
-import counterReducer from '../features/counter/counterSlice';
+import { clientApi } from './apiSlice';
+import eventPreviewRequestReducer from '../features/events/preview/eventPreviewRequestSlice';
+import eventListRequestReducer from '../features/events/eventListRequestSlice';
 
 export const store = configureStore({
   reducer: {
-    counter: counterReducer,
+    [clientApi.reducerPath]: clientApi.reducer,
+    eventListRequest: eventListRequestReducer,
+    eventPreviewRequest: eventPreviewRequestReducer,
   },
+  middleware: (getDefaultMiddleware) =>
+    getDefaultMiddleware().concat(clientApi.middleware),
 });
 
 export type AppDispatch = typeof store.dispatch;
