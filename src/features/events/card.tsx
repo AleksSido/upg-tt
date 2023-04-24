@@ -1,7 +1,6 @@
 import { Suspense, lazy } from 'react';
-import {Event, EventImage} from '../../app/event-types';
+import {Event} from '../../app/event-types';
 import './events.scss';
-import findAppropriateSizeImg from '../../utils/handle-img';
 import EventPreview from './preview';
 import EventCardTriangle from './card-triangle';
 import { useAppDispatch } from '../../app/hooks';
