@@ -1,0 +1,60 @@
+{
+  "extends": [
+    "eslint:recommended",
+    "airbnb",
+    "airbnb/hooks",
+    "airbnb-typescript",
+    "plugin:react/recommended",
+    "plugin:react/jsx-runtime",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:@typescript-eslint/recommended-requiring-type-checking",
+    "plugin:import/recommended",
+    "plugin:prettier/recommended"
+  ],
+  "rules": {
+    "react/no-array-index-key": "off",
+    "react/react-in-jsx-scope": "off",
+    "react/jsx-props-no-spreading": "off",
+    "react/destructuring-assignment": "off",
+    "react/no-unused-prop-types": "off",
+    "react/jsx-no-useless-fragment": "off",
+    "react/require-default-props": "off",
+    "react/button-has-type": "off",
+    "react/jsx-one-expression-per-line": "off",
+    "eact/jsx-one-expression-per-line": "off",
+    "import/no-extraneous-dependencies": "off",
+    "@typescript-eslint/no-unsafe-assignment": "off",
+    "@typescript-eslint/no-explicit-any": "off",
+    "@typescript-eslint/no-unsafe-return": "off",
+    "@typescript-eslint/no-unsafe-member-access": "off",
+    "@typescript-eslint/no-unsafe-argument": "off",
+    "@typescript-eslint/no-floating-promises": "off",
+    "@typescript-eslint/no-unsafe-call": "off",
+    "@typescript-eslint/no-non-null-assertion": "off",
+    "jsx-a11y/click-events-have-key-events": "off",
+    "jsx-a11y/no-static-element-interactions": "off",
+    "import/no-cycle": "off",
+    "no-underscore-dangle": "off",
+    "no-param-reassign": "off",
+    "linebreak-style": "off",
+    "no-alert": "off",
+    "object-curly-newline": "off",
+    "max-len": ["error", {
+      "code": 180
+    }],
+    "prettier/prettier": [
+      "error",
+      {
+        "printWidth": 80,
+        "endOfLine": "lf",
+        "singleQuote": true,
+        "tabWidth": 2,
+        "useTabs": true,
+        "trailingComma": "es5"
+      }
+    ]
+  },
+  "parserOptions": {
+    "project": "./tsconfig.json"
+  }
+}

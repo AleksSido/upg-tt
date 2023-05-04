@@ -1,45 +1,65 @@
-@use "src/styles/shared";
+@use 'src/styles/shared';
 
 .loading-bar {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 4px;
-  z-index: 20;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	height: 4px;
+	z-index: 20;
 
-  &__progress {
-    height: 4px;
-    width: 100%;
-    background-color: shared.$link-active-color;
-    transform: translateX(-100%);
+	&__progress {
+		height: 4px;
+		width: 100%;
+		background-color: shared.$link-active-color;
+		transform: translateX(-100%);
 
-    animation-duration: 3s;
-    animation-timing-function: linear;
+		animation-duration: 3s;
+		animation-timing-function: linear;
 
-    &_start {
-      animation-name: slow-loading;
-    }
+		&_start {
+			animation-name: slow-loading;
+		}
 
-    &_end {
-      animation-name: fast-loading;
-      animation-duration: .5s;
-      animation-timing-function: linear;
-    }
-  }
+		&_end {
+			animation-name: fast-loading;
+			animation-duration: 0.5s;
+			animation-timing-function: linear;
+		}
+	}
 }
 
 @keyframes slow-loading {
-  0% {transform: translateX(-100%);}
-  25% {transform: translateX(-80%);}
-  50% {transform: translateX(-60%);}
-  75% {transform: translateX(-40%);}
-  100% {transform: translateX(-20%);}
+	0% {
+		transform: translateX(-100%);
+	}
+	25% {
+		transform: translateX(-80%);
+	}
+	50% {
+		transform: translateX(-60%);
+	}
+	75% {
+		transform: translateX(-40%);
+	}
+	100% {
+		transform: translateX(-20%);
+	}
 }
 @keyframes fast-loading {
-  0% {transform: translateX(-20%);}
-  25% {transform: translateX(-15%);}
-  50% {transform: translateX(-10%);}
-  75% {transform: translateX(-5%);}
-  100% {transform: translateX(0%);}
+	0% {
+		transform: translateX(-20%);
+	}
+	25% {
+		transform: translateX(-15%);
+	}
+	50% {
+		transform: translateX(-10%);
+	}
+	75% {
+		transform: translateX(-5%);
+	}
+	100% {
+		transform: translateX(0%);
+	}
 }

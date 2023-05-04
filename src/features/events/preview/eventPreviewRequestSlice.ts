@@ -1,26 +1,26 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { RootState } from '../../../app/store';
 import { EventId } from '../../../app/event-types';
+import { RootState } from '../../../app/store-types';
 
 export interface EventPreviewRequestState {
-  id: EventId | undefined;
+	id: EventId | undefined;
 }
 
 const initialState: EventPreviewRequestState = {
-  id: undefined,
+	id: undefined,
 };
 
 export const eventPreviewRequestSlice = createSlice({
-  name: 'eventPreviewRequest',
-  initialState,
-  reducers: {
-    setEventId: (state, action: PayloadAction<EventId>) => {
-      state.id = action.payload;
-    },
-    resetEventId: (state) => {
-      state.id = undefined;
-    },
-  },
+	name: 'eventPreviewRequest',
+	initialState,
+	reducers: {
+		setEventId: (state, action: PayloadAction<EventId>) => {
+			state.id = action.payload;
+		},
+		resetEventId: (state) => {
+			state.id = undefined;
+		},
+	},
 });
 
 export const { setEventId, resetEventId } = eventPreviewRequestSlice.actions;

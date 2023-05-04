@@ -1,81 +1,80 @@
-@use "src/styles/shared";
+@use 'src/styles/shared';
 
 .body-container {
-  background-color: shared.$def-background-color;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
+	background-color: shared.$def-background-color;
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
 }
 .header {
-  background-color: shared.$primary-color;
-  position: relative;
+	background-color: shared.$primary-color;
+	position: relative;
 }
 .header-content {
-  @include shared.content-width;
-  padding: 32px 32px 0;
+	@include shared.content-width;
+	padding: 32px 32px 0;
 
-  @media (max-width: shared.$breakpoint-mobile) {
-    padding: 8px 8px 0;
-  }
+	@media (max-width: shared.$breakpoint-mobile) {
+		padding: 8px 8px 0;
+	}
 
-  &__top {
-    margin-bottom: 40px;
-    display: flex;
-    justify-content: space-between;
-    max-width: 100%;
+	&__top {
+		margin-bottom: 40px;
+		display: flex;
+		justify-content: space-between;
+		max-width: 100%;
 
-    @media (max-width: shared.$breakpoint-tablet) {
-      display: block;
-    }
-  }
+		@media (max-width: shared.$breakpoint-tablet) {
+			display: block;
+		}
+	}
 
-  &__top-slot {
-    max-width: 336px;
-    width: 336px;
+	&__top-slot {
+		max-width: 336px;
+		width: 336px;
 
-    @media (max-width: shared.$breakpoint-mobile) {
-      width: 100%;
-    }
-  }
+		@media (max-width: shared.$breakpoint-mobile) {
+			width: 100%;
+		}
+	}
 
-  &__title {
-    @include shared.standard-font;
-    @include shared.h1-size-height;
-    color: shared.$main-text-color;
-    margin: 0;
+	&__title {
+		@include shared.standard-font();
+		@include shared.h1-size-height;
+		color: shared.$main-text-color;
+		margin: 0;
 
-    @media (max-width: shared.$breakpoint-tablet) {
-      margin-bottom: 24px;
-    }
-  }
+		@media (max-width: shared.$breakpoint-tablet) {
+			margin-bottom: 24px;
+		}
+	}
 }
 
 .header-content__menu {
-
 }
 
 .main-content {
-  @include shared.content-width;
-  padding: 32px;
+	@include shared.content-width;
+	padding: 32px;
 
-  @media (max-width: shared.$breakpoint-mobile) {
-    padding: 8px;
-  }
+	@media (max-width: shared.$breakpoint-mobile) {
+		padding: 8px;
+	}
 }
 
 .footer {
-  background-color: shared.$primary-color;
-  margin-top: auto;
+	background-color: shared.$primary-color;
+	margin-top: auto;
 }
 .footer-content {
-  @include shared.content-width;
-  padding: 16px 0 13px;
+	@include shared.content-width;
+	padding: 16px 0 13px;
 }
 .footer-copyright {
-  @include shared.standard-font;
-  @include shared.p-size-height;
-  color: shared.$main-text-color;
-  margin: 0;
-  text-align: center;
-  opacity: .7;
+	@include shared.standard-font();
+	@include shared.p-size-height;
+	color: shared.$main-text-color;
+	margin: 0;
+	text-align: center;
+	opacity: 0.7;
 }

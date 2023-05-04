@@ -4,20 +4,20 @@ import eventPreviewRequestReducer from '../features/events/preview/eventPreviewR
 import eventListRequestReducer from '../features/events/eventListRequestSlice';
 
 export const store = configureStore({
-  reducer: {
-    [clientApi.reducerPath]: clientApi.reducer,
-    eventListRequest: eventListRequestReducer,
-    eventPreviewRequest: eventPreviewRequestReducer,
-  },
-  middleware: (getDefaultMiddleware) =>
-    getDefaultMiddleware().concat(clientApi.middleware),
+	reducer: {
+		[clientApi.reducerPath]: clientApi.reducer,
+		eventListRequest: eventListRequestReducer,
+		eventPreviewRequest: eventPreviewRequestReducer,
+	},
+	middleware: (getDefaultMiddleware) =>
+		getDefaultMiddleware().concat(clientApi.middleware),
 });
 
 export type AppDispatch = typeof store.dispatch;
 export type RootState = ReturnType<typeof store.getState>;
 export type AppThunk<ReturnType = void> = ThunkAction<
-  ReturnType,
-  RootState,
-  unknown,
-  Action<string>
+	ReturnType,
+	RootState,
+	unknown,
+	Action<string>
 >;

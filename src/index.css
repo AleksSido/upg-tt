@@ -1,20 +1,31 @@
 @import-normalize; /* bring in normalize.css styles */
 
+@font-face {
+	font-family: 'Segoe UI';
+	src: local('Segoe UI'), url('./assets/fonts/segoeui.ttf') format('truetype');
+	font-weight: 400;
+}
+@font-face {
+	font-family: 'Segoe UI';
+	src: local('Segoe UI'), url('./assets/fonts/seguisb.ttf') format('truetype');
+	font-weight: 600;
+}
+
 /* rest of app styles */
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+	margin: 0;
+	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+		'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+		sans-serif;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+	font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+		monospace;
 }
 
 * {
-  box-sizing: border-box;
+	box-sizing: border-box;
 }
