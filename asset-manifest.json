@@ -1,20 +1,22 @@
 {
   "files": {
-    "main.css": "/upg-tt/static/css/main.03fb912d.css",
-    "main.js": "/upg-tt/static/js/main.560bb2c6.js",
+    "main.css": "/upg-tt/static/css/main.fa466320.css",
+    "main.js": "/upg-tt/static/js/main.58652fd9.js",
     "static/js/869.d05b5356.chunk.js": "/upg-tt/static/js/869.d05b5356.chunk.js",
     "static/js/787.fa268485.chunk.js": "/upg-tt/static/js/787.fa268485.chunk.js",
+    "static/media/seguisb.ttf": "/upg-tt/static/media/seguisb.6e8b789f42105e109003.ttf",
+    "static/media/segoeui.ttf": "/upg-tt/static/media/segoeui.55d336ac99f56921ab9f.ttf",
     "static/media/date-icon.svg": "/upg-tt/static/media/date-icon.2797ead44cecc00fa71f.svg",
     "static/media/place-icon.svg": "/upg-tt/static/media/place-icon.2fb71b0192f2efff2c95.svg",
     "static/media/search-icon.svg": "/upg-tt/static/media/search-icon.3858d9a81eb86e7f19d2.svg",
     "index.html": "/upg-tt/index.html",
-    "main.03fb912d.css.map": "/upg-tt/static/css/main.03fb912d.css.map",
-    "main.560bb2c6.js.map": "/upg-tt/static/js/main.560bb2c6.js.map",
+    "main.fa466320.css.map": "/upg-tt/static/css/main.fa466320.css.map",
+    "main.58652fd9.js.map": "/upg-tt/static/js/main.58652fd9.js.map",
     "869.d05b5356.chunk.js.map": "/upg-tt/static/js/869.d05b5356.chunk.js.map",
     "787.fa268485.chunk.js.map": "/upg-tt/static/js/787.fa268485.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.03fb912d.css",
-    "static/js/main.560bb2c6.js"
+    "static/css/main.fa466320.css",
+    "static/js/main.58652fd9.js"
   ]
 }
